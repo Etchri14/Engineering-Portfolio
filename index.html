@@ -1,404 +1,709 @@
 <!doctype html>
-<html lang="en" data-theme="warning" data-mode="dark">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jr dev</title>
-        <meta name="description" content="" />
-        <link
-            rel="shortcut icon"
-            href="./assets/logo.png"
-            type="image/x-icon"
-        />
+<html lang="en" data-theme="primary" data-mode="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mechanical engineering portfolio for Joel Aziangli Etchri, featuring design, manufacturing, automation, robotics, and project experience."
+    />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="Title of the project" />
-        <meta property="og:description" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://github.com/PaulleDemon" />
-        <!--Replace with the current website url-->
-        <meta property="og:image" content="" />
+    <meta property="og:url" content="https://joeletchri.github.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Joel Aziangli Etchri | Mechanical Engineering Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Joel Aziangli Etchri's mechanical engineering portfolio, including experience in design, manufacturing, automation, robotics, and hands-on engineering projects."
+    />
 
-        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css"> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css" />
-        <link rel="stylesheet" href="css/index.css" />
+    <title>Joel Aziangli Etchri | Mechanical Engineering Portfolio</title>
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
-    <body
-        class="tw-flex tw-w-full tw-flex-col tw-bg-[#fff] tw-text-black dark:tw-bg-slate-800 dark:tw-text-white lg:tw-h-[100vh]"
-    >
-        <main
-            class="tw-flex tw-h-full tw-w-full tw-overflow-hidden max-lg:tw-flex-col"
-        >
-            <section
-                class="tw-flex tw-h-full tw-w-[450px] tw-flex-col tw-place-items-center tw-gap-4 tw-p-4 max-lg:tw-w-full lg:tw-shadow-xl lg:dark:tw-shadow-gray-600"
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #0ea5e9;
+        --primary-dark: #0284c7;
+        --black: #000000;
+        --white: #ffffff;
+        --muted: #a3a3a3;
+        --border: rgba(255, 255, 255, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      select {
+        font: inherit;
+      }
+
+      .tw-bg-\[\#000000\] {
+        background-color: #000000;
+      }
+
+      .tw-text-white {
+        color: #ffffff;
+      }
+
+      .tw-text-black {
+        color: #000000;
+      }
+
+      .tw-bg-white {
+        background-color: #ffffff;
+      }
+
+      .tw-rounded-lg {
+        border-radius: 0.75rem;
+      }
+
+      .tw-p-6 {
+        padding: 1.5rem;
+      }
+
+      .tw-text-justify {
+        text-align: justify;
+      }
+
+      .tw-shadow-md {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+      }
+
+      .page-shell {
+        display: grid;
+        grid-template-columns: 320px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 2rem;
+        border-right: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(14, 165, 233, 0.12), rgba(0, 0, 0, 0));
+      }
+
+      .profile-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .profile-badge {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: #dbeafe;
+        font-size: 0.85rem;
+      }
+
+      .profile-title {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      .profile-subtitle {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .nav-tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .tab-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.75rem;
+        color: #d4d4d4;
+        background: transparent;
+        cursor: pointer;
+        text-align: left;
+        transition: 180ms ease;
+      }
+
+      .tab-link:hover,
+      .tab-link.active {
+        border-color: var(--border);
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .sidebar-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .theme-select {
+        width: 100%;
+        padding: 0.75rem 0.9rem;
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        color: var(--white);
+        background: #0a0a0a;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.06);
+        transition: 180ms ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+        border-color: rgba(14, 165, 233, 0.8);
+        background: rgba(14, 165, 233, 0.14);
+      }
+
+      .main-content {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 3rem clamp(1.25rem, 4vw, 4rem);
+      }
+
+      .hero {
+        display: grid;
+        gap: 1.5rem;
+        padding: 2rem 0 3rem;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: #7dd3fc;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .hero h2,
+      .section-title {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+      }
+
+      .intro-text {
+        max-width: 850px;
+        margin: 0;
+        color: #e5e5e5;
+        font-size: 1.08rem;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 0.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.85rem 1.1rem;
+        border: 1px solid var(--border);
+        border-radius: 0.8rem;
+        font-weight: 700;
+        transition: 180ms ease;
+      }
+
+      .btn-primary {
+        border-color: var(--primary);
+        color: #001018;
+        background: var(--primary);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-outline:hover {
+        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .tab-panel {
+        display: none;
+        padding: 2rem 0;
+      }
+
+      .tab-panel.active {
+        display: block;
+      }
+
+      .section-header {
+        margin-bottom: 1.25rem;
+      }
+
+      .section-kicker {
+        margin: 0 0 0.35rem;
+        color: #7dd3fc;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .white-card {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .skill-note {
+        margin: 0 0 1rem;
+        padding: 1rem;
+        border: 1px dashed rgba(125, 211, 252, 0.65);
+        border-radius: 0.75rem;
+        color: #e0f2fe;
+        background: rgba(14, 165, 233, 0.08);
+      }
+
+      .skill-card {
+        display: flex;
+        min-height: 145px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.06);
+        text-align: center;
+      }
+
+      .skill-card i {
+        color: #7dd3fc;
+        font-size: 2rem;
+      }
+
+      .skill-card h4,
+      .experience-card h3 {
+        margin: 0;
+      }
+
+      .skill-card p,
+      .experience-card p {
+        margin: 0;
+      }
+
+      .experience-card {
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .experience-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        color: #404040;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.35rem;
+      }
+
+      .tag {
+        display: inline-flex;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        color: #075985;
+        background: #e0f2fe;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .schedule-frame {
+        width: 100%;
+        min-height: 700px;
+        border: 0;
+        border-radius: 1rem;
+        background: #ffffff;
+      }
+
+      @media (min-width: 1024px) {
+        .lg\:tw-h-\[100vh\] {
+          min-height: 100vh;
+        }
+      }
+
+      @media (max-width: 940px) {
+        .page-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+          height: auto;
+        }
+
+        .nav-tabs {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .tab-link {
+          width: auto;
+        }
+
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="tw-bg-[#000000] tw-text-white lg:tw-h-[100vh]">
+    <div class="page-shell">
+      <section class="sidebar" aria-label="Portfolio sidebar">
+        <div class="profile-block">
+          <span class="profile-badge">
+            <i class="bi bi-gear-wide-connected" aria-hidden="true"></i>
+            Mechanical Engineering Portfolio
+          </span>
+
+          <div>
+            <h1 class="profile-title">Joel Aziangli Etchri</h1>
+            <p class="profile-subtitle">Mechanical Engineering Student · USC</p>
+          </div>
+
+          <nav class="nav-tabs" aria-label="Portfolio sections">
+            <button class="tab-link active" type="button" data-tab="about">
+              <i class="bi bi-person" aria-hidden="true"></i>
+              About
+            </button>
+            <button class="tab-link" type="button" data-tab="skills">
+              <i class="bi bi-tools" aria-hidden="true"></i>
+              Skills
+            </button>
+            <button class="tab-link" type="button" data-tab="experience">
+              <i class="bi bi-briefcase" aria-hidden="true"></i>
+              Experience
+            </button>
+            <button class="tab-link" type="button" data-tab="schedule">
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>
+              Schedule Call
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <label for="theme-select">Theme</label>
+          <select id="theme-select" class="theme-select" aria-label="Theme selector">
+            <option value="primary" selected>Primary</option>
+            <option value="secondary">Secondary</option>
+            <option value="success">Success</option>
+            <option value="warning">Warning</option>
+          </select>
+
+          <div class="social-links" aria-label="Social links">
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/joeletchri"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Joel Etchri on LinkedIn"
             >
-                <!-- sidebar -->
-                <div
-                    class="tw-h-[250px] tw-w-[250px] tw-overflow-hidden tw-rounded-full"
-                >
-                    <img
-                        src="./assets/images/people/man.jpg"
-                        class="tw-h-full tw-w-full tw-object-cover"
-                        alt="man"
-                        srcset=""
-                    />
-                </div>
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://joeletchri.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Joel Etchri portfolio website"
+            >
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+            </a>
+            <a class="social-link" href="mailto:joeletchri@gmail.com" aria-label="Email Joel Etchri">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
 
-                <h1 class="tw-text-3xl tw-font-semibold">James mabe</h1>
+      <main class="main-content">
+        <header class="hero">
+          <p class="eyebrow">Design · Manufacturing · Automation · Robotics</p>
+          <h2>Mechanical engineering portfolio for practical, hands-on problem solving.</h2>
+          <p class="intro-text">
+            I am a Mechanical Engineering student at USC focused on mechanical design, manufacturing,
+            automation, and robotics. Through internships at Parker Hannifin and JBS Foods, along with
+            hands-on engineering projects, I bring a broad skill set across design, prototyping, analysis,
+            and process improvement.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="mailto:joeletchri@gmail.com">
+              <i class="bi bi-envelope-paper" aria-hidden="true"></i>
+              Contact Joel
+            </a>
+            <a
+              class="btn btn-outline"
+              href="https://joeletchri.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-folder2-open" aria-hidden="true"></i>
+              View Projects
+            </a>
+          </div>
+        </header>
 
-                <p
-                    class="tw-mt-6 tw-max-w-[550px] tw-text-justify tw-text-gray-800 dark:tw-text-gray-300"
-                >
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Dolores veritatis laboriosam obcaecati est minima pariatur
-                    dicta facilis, consequatur quod, hic nostrum qui
-                    voluptatibus laborum dolorum. Voluptates animi accusantium
-                    quos consequuntur!
-                </p>
+        <section id="about" class="tab-panel active" aria-labelledby="about-title">
+          <div class="section-header">
+            <p class="section-kicker">About</p>
+            <h2 id="about-title" class="section-title">Joel Etchri</h2>
+          </div>
 
-                <a
-                    href="https://tally.so/r/woO0Kx"
-                    class="btn-primary !tw-w-full tw-max-w-[550px] tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.02]"
-                >
-                    Contact me
-                </a>
-
-                <div class="tw-mt-auto tw-flex tw-flex-col tw-gap-2">
-                    <h3 class="tw-text-xl">News letter</h3>
-                    <form class="tw-flex tw-gap-2">
-                        <input
-                            type="email"
-                            name=""
-                            placeholder="joe@mail.com"
-                            class="input"
-                        />
-                        <button type="submit" class="btn-primary">
-                            Signup
-                        </button>
-                    </form>
-                </div>
-
-                <div class="tw-mt-5 tw-flex tw-gap-5 tw-text-2xl">
-                    <a href="http://github.com/PaulleDemon" class="link">
-                        <i class="bi bi-github"></i>
-                    </a>
-                    <a href="http://twitter.com/pauls_freeman" class="link">
-                        <i class="bi bi-twitter-x"></i>
-                    </a>
-                    <a
-                        href="http://www.youtube.com/@paultalkstech"
-                        class="link"
-                    >
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                    <a href="mailto:paul@example.com" class="link">
-                        <i class="bi bi-envelope-at-fill"></i>
-                    </a>
-                </div>
-            </section>
-
-            <div class="tw-h-full tw-w-full tw-overflow-hidden">
-                <header
-                    class="tw-relative tw-flex tw-w-full tw-overflow-hidden tw-p-2 max-lg:tw-h-[150px] max-lg:tw-flex-col lg:tw-h-[80px]"
-                >
-                    <!-- tabs section -->
-                    <div
-                        class="tw-absolute tw-left-[50%] tw-top-4 tw-flex tw-h-[60px] tw-translate-x-[-50%] tw-gap-4 tw-overflow-x-auto tw-rounded-md tw-border-2 tw-border-primary tw-p-1 tw-px-4 max-md:tw-w-full md:tw-w-fit"
-                    >
-                        <button
-                            class="tab-btn tab-active"
-                            onclick="openTab(event, 'about')"
-                        >
-                            About
-                        </button>
-                        <button
-                            class="tab-btn"
-                            onclick="openTab(event, 'skills')"
-                        >
-                            Skills
-                        </button>
-                        <button
-                            class="tab-btn"
-                            onclick="openTab(event, 'experience')"
-                        >
-                            Experience
-                        </button>
-                        <button
-                            class="tab-btn"
-                            onclick="openTab(event, 'call')"
-                        >
-                            Schedule call
-                        </button>
-                    </div>
-
-                    <div
-                        class="tw-m-2 tw-ml-auto tw-flex tw-place-items-center tw-gap-2 max-lg:tw-mt-auto"
-                    >
-                        <select
-                            onchange="switchTheme()"
-                            id="theme-selector"
-                            class="input !tw-h-fit !tw-p-1 tw-text-black dark:tw-text-white"
-                        >
-                            <option value="primary">Primary</option>
-                            <option value="warning" selected>warning</option>
-                            <option value="success">success</option>
-                        </select>
-
-                        <button class="tw-w-[30px]" onclick="toggleMode()">
-                            <i class="bi bi-sun-fill" id="toggle-mode-icon"></i>
-                        </button>
-                    </div>
-                </header>
-
-                <!-- tab contents -->
-                <div>
-                    <section
-                        class="tab-content tw-relative tw-flex tw-h-full tw-w-full tw-flex-col tw-overflow-hidden max-lg:tw-p-4"
-                        data-tab-name="about"
-                    >
-                        <div
-                            class="tw-flex tw-h-full tw-w-full tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-flex-col"
-                        >
-                            <div
-                                class="tw-flex tw-flex-col tw-place-content-center"
-                            >
-                                <div
-                                    class="tw-text-6xl tw-font-semibold tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
-                                >
-                                    Hi 👋,
-                                    <br />
-                                    I am
-                                    <span class="tw-text-primary">
-                                        James mabe
-                                    </span>
-                                </div>
-                                <div
-                                    class="tw-mt-4 tw-max-w-[450px] tw-p-2 tw-text-justify max-lg:tw-max-w-full"
-                                >
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Enim velit odit
-                                    necessitatibus sint eos cumque illo harum,
-                                    quam facilis iste. Accusamus quisquam earum
-                                    repellendus excepturi nobis veniam vitae
-                                    assumenda error.
-                                </div>
-
-                                <div
-                                    class="tw-mt-4 tw-flex tw-place-content-end tw-gap-4 tw-overflow-hidden tw-p-2"
-                                >
-                                    <a
-                                        href="https://github.com/PaulleDemon"
-                                        class="btn-primary !tw-bg-[#c8cbf984] !tw-text-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
-                                    >
-                                        <span>Projects</span>
-                                    </a>
-                                    <a
-                                        class="btn-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
-                                        href="https://tally.so/r/woO0Kx"
-                                    >
-                                        Contact
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section
-                        class="tab-content tw-relative tw-flex tw-hidden tw-h-full tw-w-full tw-flex-col tw-overflow-hidden max-lg:tw-p-4"
-                        data-tab-name="skills"
-                    >
-                        <div
-                            class="tw-flex tw-h-full tw-w-full tw-flex-wrap tw-place-content-center tw-gap-6 tw-p-[5%] tw-px-[25%] max-xl:tw-place-items-center max-lg:tw-px-[10%] max-md:tw-px-2"
-                        >
-                            <div
-                                class="tw-flex tw-h-[150px] tw-w-[150px] tw-place-content-center tw-items-center tw-rounded-lg tw-border-2 tw-border-primary tw-bg-white tw-shadow-xl"
-                            >
-                                <div>
-                                    <img
-                                        src="./assets/images/icons/html5.png"
-                                        alt="html5"
-                                        srcset=""
-                                        class="tw-object-contain"
-                                    />
-                                </div>
-                            </div>
-
-                            <div
-                                class="tw-flex tw-h-[150px] tw-w-[150px] tw-place-content-center tw-items-center tw-rounded-lg tw-border-2 tw-border-primary tw-bg-white tw-shadow-xl"
-                            >
-                                <div>
-                                    <img
-                                        src="./assets/images/icons/django.png"
-                                        alt="html5"
-                                        srcset=""
-                                        class="tw-object-contain"
-                                    />
-                                </div>
-                            </div>
-                            <div
-                                class="tw-flex tw-h-[150px] tw-w-[150px] tw-place-content-center tw-items-center tw-rounded-lg tw-border-2 tw-border-primary tw-bg-white tw-shadow-xl"
-                            >
-                                <div>
-                                    <img
-                                        src="./assets/images/icons/reactjs.png"
-                                        alt="react js"
-                                        srcset=""
-                                        class="tw-object-contain"
-                                    />
-                                </div>
-                            </div>
-
-                            <div
-                                class="tw-flex tw-h-[150px] tw-w-[150px] tw-place-content-center tw-items-center tw-rounded-lg tw-border-2 tw-border-primary tw-bg-white tw-shadow-xl"
-                            >
-                                <div>
-                                    <img
-                                        src="./assets/images/icons/tailwind.png"
-                                        alt="react js"
-                                        srcset=""
-                                        class="tw-object-contain"
-                                    />
-                                </div>
-                            </div>
-
-                            <div
-                                class="tw-flex tw-h-[150px] tw-w-[150px] tw-place-content-center tw-items-center tw-rounded-lg tw-border-2 tw-border-primary tw-bg-white tw-shadow-xl"
-                            >
-                                <div>
-                                    <img
-                                        src="./assets/images/icons/aws.png"
-                                        alt="aws"
-                                        srcset=""
-                                        class="tw-object-contain"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section
-                        class="tab-content tw-relative tw-flex tw-hidden tw-h-full tw-w-full tw-flex-col tw-overflow-hidden max-lg:tw-p-4"
-                        data-tab-name="experience"
-                    >
-                        <div
-                            class="tw-flex tw-h-full tw-w-full tw-flex-wrap tw-place-content-center tw-gap-6 tw-p-[5%] tw-px-[25%] max-xl:tw-place-items-center max-md:tw-px-1"
-                        >
-                            <div></div>
-
-                            <div class="timeline tw-flex tw-flex-col tw-gap-5">
-                                <div
-                                    class="timeline-container tw-relative tw-mb-8"
-                                >
-                                    <div
-                                        class="tw-flex tw-max-w-[550px] tw-flex-col tw-gap-2 tw-p-1 max-lg:tw-max-w-[320px]"
-                                    >
-                                        <h3 class="tw-text-3xl">Apple</h3>
-                                        <p
-                                            class="tw-text-gray-500 dark:tw-text-gray-200"
-                                        >
-                                            2023 - current
-                                        </p>
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipisicing elit.
-                                            Tempora accusantium rem modi
-                                            deleniti praesentium pariatur cum
-                                            aliquid ullam aperiam ut!
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="timeline-container tw-relative tw-mb-8"
-                                >
-                                    <div
-                                        class="tw-flex tw-max-w-[550px] tw-flex-col tw-gap-2 tw-p-1 max-lg:tw-max-w-[320px]"
-                                    >
-                                        <h3 class="tw-text-3xl">IBM</h3>
-                                        <p
-                                            class="tw-text-gray-500 dark:tw-text-gray-200"
-                                        >
-                                            2020 - 2023
-                                        </p>
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipisicing elit.
-                                            Tempora accusantium rem modi
-                                            deleniti praesentium pariatur cum
-                                            aliquid ullam aperiam ut!
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="timeline-container tw-relative tw-mb-8"
-                                >
-                                    <div
-                                        class="tw-flex tw-max-w-[550px] tw-flex-col tw-gap-2 tw-p-1 max-lg:tw-max-w-[320px]"
-                                    >
-                                        <h3 class="tw-text-3xl">Google</h3>
-                                        <p
-                                            class="tw-text-gray-500 dark:tw-text-gray-200"
-                                        >
-                                            2018 - 2020
-                                        </p>
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipisicing elit.
-                                            Tempora accusantium rem modi
-                                            deleniti praesentium pariatur cum
-                                            aliquid ullam aperiam ut!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section
-                        class="tab-content tw-relative tw-flex tw-hidden tw-h-full tw-w-full tw-flex-col tw-overflow-hidden max-lg:tw-p-2"
-                        data-tab-name="call"
-                    >
-                        <div
-                            class="tw-flex tw-h-full tw-w-full tw-flex-wrap tw-place-content-center tw-gap-6 tw-p-4 max-xl:tw-place-items-center"
-                        >
-                            <iframe
-                                src="https://koalendar.com/e/meet-with-paul-about-webdesign?embed=true"
-                                width="100%"
-                                height="800px"
-                                frameborder="0"
-                            ></iframe>
-                        </div>
-                    </section>
-                </div>
-
-                <footer
-                    class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
-                ></footer>
+          <div class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-justify tw-text-black tw-shadow-md white-card">
+            <p>
+              Joel Etchri is a Mechanical Engineering student at the University of Southern California with
+              experience across mechanical design, manufacturing systems, automation, and robotics. His work
+              includes internship experience with Parker Hannifin and JBS Foods, where he contributed to
+              engineering, process improvement, and production-focused initiatives. At USC, Joel has expanded
+              his hands-on engineering experience through USC Formula SAE and USC Makers, applying design,
+              prototyping, fabrication, testing, and teamwork to real engineering challenges.
+            </p>
+            <div class="button-row">
+              <a
+                class="btn btn-primary"
+                href="https://joeletchri.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                Projects
+              </a>
+              <a class="btn btn-outline" href="mailto:joeletchri@gmail.com" style="color: #000000; border-color: #d4d4d4;">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                Contact
+              </a>
             </div>
-        </main>
-    </body>
+          </div>
+        </section>
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
-        integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
-        integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
+        <section id="skills" class="tab-panel" aria-labelledby="skills-title">
+          <div class="section-header">
+            <p class="section-kicker">Skills</p>
+            <h2 id="skills-title" class="section-title">Engineering Skill Areas</h2>
+          </div>
 
-    <script src="./index.js"></script>
+          <!-- These existing icon cards should later be replaced with detailed engineering skill cards. -->
+          <p class="skill-note">
+            Note: these icon cards should later be replaced with engineering skill cards covering CAD,
+            manufacturing, prototyping, analysis, automation, robotics, and process improvement.
+          </p>
+
+          <div class="grid grid-3">
+            <article class="skill-card">
+              <i class="bi bi-bounding-box-circles" aria-hidden="true"></i>
+              <h4>Mechanical Design</h4>
+              <p>CAD, mechanisms, assemblies, design iteration.</p>
+            </article>
+            <article class="skill-card">
+              <i class="bi bi-cpu" aria-hidden="true"></i>
+              <h4>Automation</h4>
+              <p>Controls mindset, equipment improvement, robotics exposure.</p>
+            </article>
+            <article class="skill-card">
+              <i class="bi bi-wrench-adjustable-circle" aria-hidden="true"></i>
+              <h4>Manufacturing</h4>
+              <p>Fabrication, prototyping, production support, troubleshooting.</p>
+            </article>
+            <article class="skill-card">
+              <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+              <h4>Analysis</h4>
+              <p>Engineering calculations, testing, data-informed decisions.</p>
+            </article>
+            <article class="skill-card">
+              <i class="bi bi-car-front" aria-hidden="true"></i>
+              <h4>Formula SAE</h4>
+              <p>Team engineering, vehicle systems, design-for-performance.</p>
+            </article>
+            <article class="skill-card">
+              <i class="bi bi-lightbulb" aria-hidden="true"></i>
+              <h4>Prototyping</h4>
+              <p>Maker tools, rapid iteration, practical build experience.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="experience" class="tab-panel" aria-labelledby="experience-title">
+          <div class="section-header">
+            <p class="section-kicker">Experience</p>
+            <h2 id="experience-title" class="section-title">Engineering Experience</h2>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card">
+              <h3>Parker Hannifin</h3>
+              <div class="experience-meta">
+                <span>Engineering Intern</span>
+                <span>·</span>
+                <span>Summer 2024</span>
+              </div>
+              <p>
+                Supported engineering and manufacturing work focused on mechanical systems, production
+                improvement, documentation, and practical problem solving in an industrial environment.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Manufacturing</span>
+                <span class="tag">Process Improvement</span>
+                <span class="tag">Mechanical Systems</span>
+              </div>
+            </article>
+
+            <article class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card">
+              <h3>JBS Foods</h3>
+              <div class="experience-meta">
+                <span>Engineering Intern</span>
+                <span>·</span>
+                <span>Summer 2023</span>
+              </div>
+              <p>
+                Worked in a production-focused setting supporting reliability, operations, and engineering
+                initiatives tied to equipment performance, safety, and continuous improvement.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Operations</span>
+                <span class="tag">Reliability</span>
+                <span class="tag">Continuous Improvement</span>
+              </div>
+            </article>
+
+            <article class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card">
+              <h3>USC Formula SAE</h3>
+              <div class="experience-meta">
+                <span>Student Engineer</span>
+                <span>·</span>
+                <span>2023–Present</span>
+              </div>
+              <p>
+                Contributes to a student race car engineering team through collaborative design,
+                prototyping, fabrication, testing, and cross-functional engineering problem solving.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Vehicle Design</span>
+                <span class="tag">Team Engineering</span>
+                <span class="tag">Testing</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="schedule" class="tab-panel" aria-labelledby="schedule-title">
+          <div class="section-header">
+            <p class="section-kicker">Schedule Call</p>
+            <h2 id="schedule-title" class="section-title">Connect with Joel</h2>
+          </div>
+
+          <!-- Replace this embedded scheduler with Joel's own scheduling link or remove this section. -->
+          <iframe
+            class="schedule-frame"
+            src="https://calendly.com/"
+            title="Schedule a call"
+            loading="lazy"
+          ></iframe>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const tabButtons = document.querySelectorAll("[data-tab]");
+      const tabPanels = document.querySelectorAll(".tab-panel");
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetTab = button.getAttribute("data-tab");
+
+          tabButtons.forEach((item) => item.classList.remove("active"));
+          tabPanels.forEach((panel) => panel.classList.remove("active"));
+
+          button.classList.add("active");
+          document.getElementById(targetTab)?.classList.add("active");
+        });
+      });
+    </script>
+
+    <script>
+      const themeSelect = document.getElementById("theme-select");
+
+      themeSelect?.addEventListener("change", (event) => {
+        document.documentElement.setAttribute("data-theme", event.target.value);
+      });
+    </script>
+  </body>
 </html>
