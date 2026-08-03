@@ -10,7 +10,10 @@
 
     <meta property="og:url" content="https://joeletchri.github.io" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Joel Aziangli Etchri | Mechanical Engineering Portfolio" />
+    <meta
+      property="og:title"
+      content="Joel Aziangli Etchri | Mechanical Engineering Portfolio"
+    />
     <meta
       property="og:description"
       content="Explore Joel Aziangli Etchri's mechanical engineering portfolio, including experience in design, manufacturing, automation, robotics, and hands-on engineering projects."
@@ -26,8 +29,11 @@
 
     <style>
       :root {
-        --primary: #0ea5e9;
-        --primary-dark: #0284c7;
+        --primary: #266e0d;
+        --primary-dark: #1d560a;
+        --primary-light: #8fd67c;
+        --primary-soft: rgba(38, 110, 13, 0.14);
+        --primary-border: rgba(38, 110, 13, 0.65);
         --black: #000000;
         --white: #ffffff;
         --muted: #a3a3a3;
@@ -44,8 +50,11 @@
 
       body {
         margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height: 1.6;
+        background: var(--black);
+        color: var(--white);
       }
 
       a {
@@ -58,20 +67,12 @@
         font: inherit;
       }
 
-      .tw-bg-\[\#000000\] {
-        background-color: #000000;
-      }
-
-      .tw-text-white {
-        color: #ffffff;
-      }
-
       .tw-text-black {
-        color: #000000;
+        color: var(--black);
       }
 
       .tw-bg-white {
-        background-color: #ffffff;
+        background-color: var(--white);
       }
 
       .tw-rounded-lg {
@@ -106,7 +107,11 @@
         gap: 2rem;
         padding: 2rem;
         border-right: 1px solid var(--border);
-        background: linear-gradient(180deg, rgba(14, 165, 233, 0.12), rgba(0, 0, 0, 0));
+        background: linear-gradient(
+          180deg,
+          rgba(38, 110, 13, 0.22),
+          rgba(0, 0, 0, 0)
+        );
       }
 
       .profile-block {
@@ -123,7 +128,7 @@
         padding: 0.35rem 0.7rem;
         border: 1px solid var(--border);
         border-radius: 999px;
-        color: #dbeafe;
+        color: var(--primary-light);
         font-size: 0.85rem;
       }
 
@@ -173,17 +178,9 @@
         gap: 1rem;
       }
 
-      .theme-select {
-        width: 100%;
-        padding: 0.75rem 0.9rem;
-        border: 1px solid var(--border);
-        border-radius: 0.75rem;
-        color: var(--white);
-        background: #0a0a0a;
-      }
-
       .social-links {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.75rem;
       }
 
@@ -202,8 +199,8 @@
 
       .social-link:hover {
         transform: translateY(-2px);
-        border-color: rgba(14, 165, 233, 0.8);
-        background: rgba(14, 165, 233, 0.14);
+        border-color: var(--primary-border);
+        background: var(--primary-soft);
       }
 
       .main-content {
@@ -221,11 +218,11 @@
 
       .eyebrow {
         margin: 0;
-        color: #7dd3fc;
+        color: var(--primary-light);
+        font-size: 0.8rem;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        font-size: 0.8rem;
       }
 
       .hero h2,
@@ -264,7 +261,7 @@
 
       .btn-primary {
         border-color: var(--primary);
-        color: #001018;
+        color: var(--white);
         background: var(--primary);
       }
 
@@ -292,7 +289,7 @@
 
       .section-kicker {
         margin: 0 0 0.35rem;
-        color: #7dd3fc;
+        color: var(--primary-light);
         font-size: 0.8rem;
         font-weight: 800;
         letter-spacing: 0.08em;
@@ -316,15 +313,6 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .skill-note {
-        margin: 0 0 1rem;
-        padding: 1rem;
-        border: 1px dashed rgba(125, 211, 252, 0.65);
-        border-radius: 0.75rem;
-        color: #e0f2fe;
-        background: rgba(14, 165, 233, 0.08);
-      }
-
       .skill-card {
         display: flex;
         min-height: 145px;
@@ -340,7 +328,7 @@
       }
 
       .skill-card i {
-        color: #7dd3fc;
+        color: var(--primary-light);
         font-size: 2rem;
       }
 
@@ -379,8 +367,8 @@
         display: inline-flex;
         padding: 0.25rem 0.55rem;
         border-radius: 999px;
-        color: #075985;
-        background: #e0f2fe;
+        color: var(--white);
+        background: var(--primary);
         font-size: 0.82rem;
         font-weight: 700;
       }
@@ -388,9 +376,10 @@
       .schedule-frame {
         width: 100%;
         min-height: 700px;
+        margin-top: 1rem;
         border: 0;
         border-radius: 1rem;
-        background: #ffffff;
+        background: var(--white);
       }
 
       @media (min-width: 1024px) {
@@ -426,7 +415,7 @@
     </style>
   </head>
 
-  <body class="tw-bg-[#000000] tw-text-white lg:tw-h-[100vh]">
+  <body class="lg:tw-h-[100vh]">
     <div class="page-shell">
       <section class="sidebar" aria-label="Portfolio sidebar">
         <div class="profile-block">
@@ -461,14 +450,6 @@
         </div>
 
         <div class="sidebar-footer">
-          <label for="theme-select">Theme</label>
-          <select id="theme-select" class="theme-select" aria-label="Theme selector">
-            <option value="primary" selected>Primary</option>
-            <option value="secondary">Secondary</option>
-            <option value="success">Success</option>
-            <option value="warning">Warning</option>
-          </select>
-
           <div class="social-links" aria-label="Social links">
             <a
               class="social-link"
@@ -488,7 +469,11 @@
             >
               <i class="bi bi-globe2" aria-hidden="true"></i>
             </a>
-            <a class="social-link" href="mailto:joeletchri@gmail.com" aria-label="Email Joel Etchri">
+            <a
+              class="social-link"
+              href="mailto:joeletchri@gmail.com"
+              aria-label="Email Joel Etchri"
+            >
               <i class="bi bi-envelope" aria-hidden="true"></i>
             </a>
           </div>
@@ -498,14 +483,19 @@
       <main class="main-content">
         <header class="hero">
           <p class="eyebrow">Design · Manufacturing · Automation · Robotics</p>
-          <h2>Mechanical engineering portfolio for practical, hands-on problem solving.</h2>
+          <h2>
+            Mechanical engineering portfolio for practical, hands-on problem
+            solving.
+          </h2>
           <p class="intro-text">
-            I am a Mechanical Engineering student at USC focused on mechanical design, manufacturing,
-            automation, and robotics. Through internships at Parker Hannifin and JBS Foods, along with
-            hands-on engineering projects, I bring a broad skill set across design, prototyping, analysis,
-            and process improvement.
+            I am a Mechanical Engineering student at USC focused on mechanical
+            design, manufacturing, automation, and robotics. Through internships
+            at Parker Hannifin and JBS Foods, along with hands-on engineering
+            projects, I bring a broad skill set across design, prototyping,
+            analysis, and process improvement.
           </p>
-          <div class="button-row">
+
+          <div class="button-row" aria-label="Portfolio actions">
             <a class="btn btn-primary" href="mailto:joeletchri@gmail.com">
               <i class="bi bi-envelope-paper" aria-hidden="true"></i>
               Contact Joel
@@ -519,6 +509,15 @@
               <i class="bi bi-folder2-open" aria-hidden="true"></i>
               View Projects
             </a>
+            <a
+              class="btn btn-outline"
+              href="./assets/Joel_Aziangli_Etchri_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-file-earmark-person" aria-hidden="true"></i>
+              View Resume
+            </a>
           </div>
         </header>
 
@@ -528,16 +527,22 @@
             <h2 id="about-title" class="section-title">Joel Etchri</h2>
           </div>
 
-          <div class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-justify tw-text-black tw-shadow-md white-card">
+          <div
+            class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-justify tw-text-black tw-shadow-md white-card"
+          >
             <p>
-              Joel Etchri is a Mechanical Engineering student at the University of Southern California with
-              experience across mechanical design, manufacturing systems, automation, and robotics. His work
-              includes internship experience with Parker Hannifin and JBS Foods, where he contributed to
-              engineering, process improvement, and production-focused initiatives. At USC, Joel has expanded
-              his hands-on engineering experience through USC Formula SAE and USC Makers, applying design,
-              prototyping, fabrication, testing, and teamwork to real engineering challenges.
+              Joel Etchri is a Mechanical Engineering student at the University
+              of Southern California with experience across mechanical design,
+              manufacturing systems, automation, and robotics. His work includes
+              internship experience with Parker Hannifin and JBS Foods, where he
+              contributed to engineering, process improvement, and
+              production-focused initiatives. At USC, Joel has expanded his
+              hands-on engineering experience through USC Formula SAE and USC
+              Makers, applying design, prototyping, fabrication, testing, and
+              teamwork to real engineering challenges.
             </p>
-            <div class="button-row">
+
+            <div class="button-row" aria-label="About actions">
               <a
                 class="btn btn-primary"
                 href="https://joeletchri.github.io"
@@ -547,7 +552,11 @@
                 <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
                 Projects
               </a>
-              <a class="btn btn-outline" href="mailto:joeletchri@gmail.com" style="color: #000000; border-color: #d4d4d4;">
+              <a
+                class="btn btn-outline"
+                href="mailto:joeletchri@gmail.com"
+                style="color: #000000; border-color: #d4d4d4"
+              >
                 <i class="bi bi-envelope" aria-hidden="true"></i>
                 Contact
               </a>
@@ -558,14 +567,10 @@
         <section id="skills" class="tab-panel" aria-labelledby="skills-title">
           <div class="section-header">
             <p class="section-kicker">Skills</p>
-            <h2 id="skills-title" class="section-title">Engineering Skill Areas</h2>
+            <h2 id="skills-title" class="section-title">
+              Engineering Skill Areas
+            </h2>
           </div>
-
-          <!-- These existing icon cards should later be replaced with detailed engineering skill cards. -->
-          <p class="skill-note">
-            Note: these icon cards should later be replaced with engineering skill cards covering CAD,
-            manufacturing, prototyping, analysis, automation, robotics, and process improvement.
-          </p>
 
           <div class="grid grid-3">
             <article class="skill-card">
@@ -573,26 +578,31 @@
               <h4>Mechanical Design</h4>
               <p>CAD, mechanisms, assemblies, design iteration.</p>
             </article>
+
             <article class="skill-card">
               <i class="bi bi-cpu" aria-hidden="true"></i>
               <h4>Automation</h4>
               <p>Controls mindset, equipment improvement, robotics exposure.</p>
             </article>
+
             <article class="skill-card">
               <i class="bi bi-wrench-adjustable-circle" aria-hidden="true"></i>
               <h4>Manufacturing</h4>
               <p>Fabrication, prototyping, production support, troubleshooting.</p>
             </article>
+
             <article class="skill-card">
               <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
               <h4>Analysis</h4>
               <p>Engineering calculations, testing, data-informed decisions.</p>
             </article>
+
             <article class="skill-card">
               <i class="bi bi-car-front" aria-hidden="true"></i>
               <h4>Formula SAE</h4>
               <p>Team engineering, vehicle systems, design-for-performance.</p>
             </article>
+
             <article class="skill-card">
               <i class="bi bi-lightbulb" aria-hidden="true"></i>
               <h4>Prototyping</h4>
@@ -601,14 +611,22 @@
           </div>
         </section>
 
-        <section id="experience" class="tab-panel" aria-labelledby="experience-title">
+        <section
+          id="experience"
+          class="tab-panel"
+          aria-labelledby="experience-title"
+        >
           <div class="section-header">
             <p class="section-kicker">Experience</p>
-            <h2 id="experience-title" class="section-title">Engineering Experience</h2>
+            <h2 id="experience-title" class="section-title">
+              Engineering Experience
+            </h2>
           </div>
 
           <div class="grid grid-2">
-            <article class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card">
+            <article
+              class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card"
+            >
               <h3>Parker Hannifin</h3>
               <div class="experience-meta">
                 <span>Engineering Intern</span>
@@ -616,8 +634,9 @@
                 <span>Summer 2024</span>
               </div>
               <p>
-                Supported engineering and manufacturing work focused on mechanical systems, production
-                improvement, documentation, and practical problem solving in an industrial environment.
+                Supported engineering and manufacturing work focused on
+                mechanical systems, production improvement, documentation, and
+                practical problem solving in an industrial environment.
               </p>
               <div class="tag-list">
                 <span class="tag">Manufacturing</span>
@@ -626,7 +645,9 @@
               </div>
             </article>
 
-            <article class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card">
+            <article
+              class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card"
+            >
               <h3>JBS Foods</h3>
               <div class="experience-meta">
                 <span>Engineering Intern</span>
@@ -634,8 +655,9 @@
                 <span>Summer 2023</span>
               </div>
               <p>
-                Worked in a production-focused setting supporting reliability, operations, and engineering
-                initiatives tied to equipment performance, safety, and continuous improvement.
+                Worked in a production-focused setting supporting reliability,
+                operations, and engineering initiatives tied to equipment
+                performance, safety, and continuous improvement.
               </p>
               <div class="tag-list">
                 <span class="tag">Operations</span>
@@ -644,7 +666,9 @@
               </div>
             </article>
 
-            <article class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card">
+            <article
+              class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md experience-card white-card"
+            >
               <h3>USC Formula SAE</h3>
               <div class="experience-meta">
                 <span>Student Engineer</span>
@@ -652,8 +676,9 @@
                 <span>2023–Present</span>
               </div>
               <p>
-                Contributes to a student race car engineering team through collaborative design,
-                prototyping, fabrication, testing, and cross-functional engineering problem solving.
+                Contributes to a student race car engineering team through
+                collaborative design, prototyping, fabrication, testing, and
+                cross-functional engineering problem solving.
               </p>
               <div class="tag-list">
                 <span class="tag">Vehicle Design</span>
@@ -664,17 +689,30 @@
           </div>
         </section>
 
-        <section id="schedule" class="tab-panel" aria-labelledby="schedule-title">
+        <section
+          id="schedule"
+          class="tab-panel"
+          aria-labelledby="schedule-title"
+        >
           <div class="section-header">
             <p class="section-kicker">Schedule Call</p>
             <h2 id="schedule-title" class="section-title">Connect with Joel</h2>
           </div>
 
-          <!-- Replace this embedded scheduler with Joel's own scheduling link or remove this section. -->
+          <div
+            class="tw-rounded-lg tw-bg-white tw-p-6 tw-text-black tw-shadow-md white-card"
+          >
+            <p>
+              Interested in discussing my engineering experience, projects, or
+              potential opportunities? Schedule a 30-minute call with me using
+              the calendar below.
+            </p>
+          </div>
+
           <iframe
             class="schedule-frame"
-            src="https://calendly.com/"
-            title="Schedule a call"
+            src="https://calendly.com/joeletchri/30min?embed=true"
+            title="Schedule a 30-minute call with Joel Etchri"
             loading="lazy"
           ></iframe>
         </section>
@@ -695,14 +733,6 @@
           button.classList.add("active");
           document.getElementById(targetTab)?.classList.add("active");
         });
-      });
-    </script>
-
-    <script>
-      const themeSelect = document.getElementById("theme-select");
-
-      themeSelect?.addEventListener("change", (event) => {
-        document.documentElement.setAttribute("data-theme", event.target.value);
       });
     </script>
   </body>
